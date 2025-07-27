@@ -5,9 +5,11 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -16,7 +18,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -58,8 +62,13 @@ fun SplashStart(navController: NavController) {
 
         Image(
             painter = painterResource(R.drawable.cv_splash),
-            modifier = Modifier.size(64.dp, 70.dp),
-            contentDescription = "Eldar soluciones transaccionales"
+            contentDescription = "Adrian De Seta CV",
+            modifier = Modifier
+                .size(100.dp) // mismo ancho y alto para que quede perfectamente circular
+                .clip(CircleShape)
+                .background(Color.LightGray), // opcional, fondo detrás de la imagen
+            contentScale = ContentScale.Crop // rellena el círculo
         )
+
     }
 }

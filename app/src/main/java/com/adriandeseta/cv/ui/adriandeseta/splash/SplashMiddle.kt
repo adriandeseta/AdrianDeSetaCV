@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -17,7 +18,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -40,11 +43,14 @@ fun SplashMiddle(navController: NavController) {
             finishedListener = { navController.navigate(SplashScreens.SplashEnd.route) })
 
         Image(
+            painter = painterResource(R.drawable.cv_splash),
             modifier = Modifier
                 .offset(x = displacement.dp)
-                .size(64.dp, 70.dp),
-            painter = painterResource(R.drawable.cv_splash),
-            contentDescription = "Eldar soluciones transaccionales"
+                .size(100.dp) // mismo ancho y alto para que quede perfectamente circular
+                .clip(CircleShape)
+                .background(Color.LightGray), // opcional, fondo detrás de la imagen
+            contentScale = ContentScale.Crop,
+            contentDescription = "Adrian De Seta CV"
         )
 
         LaunchedEffect(Unit) {
