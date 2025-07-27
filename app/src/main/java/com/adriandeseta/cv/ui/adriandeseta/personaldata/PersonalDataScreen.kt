@@ -4,7 +4,6 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,8 +17,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.adriandeseta.cv.ui.adriandeseta.profile.ProfileScreen
 
 @Composable
 fun PersonalDataScreen(navController: NavController) {
@@ -126,5 +128,15 @@ fun PersonalDataScreen(navController: NavController) {
             text = "adriandeseta1985@gmail.com",
             style = MaterialTheme.typography.labelLarge,
         )
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun PreviewPersonalDataScreen() {
+    // Si tenés un tema custom, usalo acá:
+    MaterialTheme {
+        // Usamos un NavController de prueba
+        PersonalDataScreen(navController = rememberNavController())
     }
 }

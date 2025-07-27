@@ -25,12 +25,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.adriandeseta.cv.R
+import com.adriandeseta.cv.ui.theme.cv_dark_grey
 
 @Composable
 fun SplashMiddle(navController: NavController) {
     Box(
         modifier = Modifier
-            .background(Color.Yellow)
+            .background(cv_dark_grey)
             .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
@@ -46,7 +47,7 @@ fun SplashMiddle(navController: NavController) {
             painter = painterResource(R.drawable.cv_splash),
             modifier = Modifier
                 .offset(x = displacement.dp)
-                .size(100.dp) // mismo ancho y alto para que quede perfectamente circular
+                .size(125.dp) // mismo ancho y alto para que quede perfectamente circular
                 .clip(CircleShape)
                 .background(Color.LightGray), // opcional, fondo detrás de la imagen
             contentScale = ContentScale.Crop,

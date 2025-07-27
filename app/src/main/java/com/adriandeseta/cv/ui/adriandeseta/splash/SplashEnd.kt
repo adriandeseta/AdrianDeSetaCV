@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.adriandeseta.cv.R
 import com.adriandeseta.cv.ui.main.MainScreens
+import com.adriandeseta.cv.ui.theme.cv_dark_grey
 import kotlinx.coroutines.delay
 
 @Composable
@@ -39,7 +40,7 @@ fun SplashEnd(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Yellow),
+            .background(cv_dark_grey),
         contentAlignment = Alignment.Center
     ) {
         var expanded by remember { mutableStateOf(false) }
@@ -73,7 +74,7 @@ fun SplashEnd(navController: NavController) {
             Image(
                 painter = painterResource(R.drawable.cv_splash),
                 modifier = Modifier
-                    .size(100.dp)
+                    .size(125.dp)
                     .clip(CircleShape)
                     .background(Color.LightGray),
                 contentScale = ContentScale.Crop,
@@ -82,7 +83,7 @@ fun SplashEnd(navController: NavController) {
             Text(
                 text = "Adrian De Seta CV",
                 modifier = Modifier.padding(start = 10.dp),
-                style = MaterialTheme.typography.bodyLarge
+                style = MaterialTheme.typography.titleLarge
             )
         }
     }

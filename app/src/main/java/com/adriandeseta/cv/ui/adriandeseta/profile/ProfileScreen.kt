@@ -48,7 +48,7 @@ fun ProfileScreen(navController: NavController) {
             painter = painterResource(R.drawable.cv_splash),
             contentDescription = "Adrian De Seta CV",
             modifier = Modifier
-                .size(200.dp)
+                .size(150.dp)
                 .clip(CircleShape)
                 .background(MaterialTheme.colorScheme.secondary),
             contentScale = ContentScale.FillBounds

@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -26,6 +27,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.adriandeseta.cv.R
+import com.adriandeseta.cv.ui.theme.cv_dark_grey
 import kotlin.math.pow
 
 @Composable
@@ -55,7 +57,7 @@ fun SplashStart(navController: NavController) {
             modifier = Modifier.fillMaxSize(),
             onDraw = {
                 drawCircle(
-                    color = Color.Yellow,
+                    color = cv_dark_grey,
                     radius = radius
                 )
             })
@@ -64,7 +66,7 @@ fun SplashStart(navController: NavController) {
             painter = painterResource(R.drawable.cv_splash),
             contentDescription = "Adrian De Seta CV",
             modifier = Modifier
-                .size(100.dp) // mismo ancho y alto para que quede perfectamente circular
+                .size(125.dp) // mismo ancho y alto para que quede perfectamente circular
                 .clip(CircleShape)
                 .background(Color.LightGray), // opcional, fondo detrás de la imagen
             contentScale = ContentScale.Crop // rellena el círculo
