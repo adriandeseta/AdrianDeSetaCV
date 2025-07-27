@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.adriandeseta.cv.R
 import com.adriandeseta.cv.ui.main.MainScreens
+import kotlinx.coroutines.delay
 
 @Composable
 fun SplashEnd(navController: NavController) {
@@ -39,49 +40,52 @@ fun SplashEnd(navController: NavController) {
         contentAlignment = Alignment.Center
     ) {
         var expanded by remember { mutableStateOf(false) }
+        var animationFinished by remember { mutableStateOf(false) }
 
         val expansion by animateFloatAsState(
             targetValue = if (expanded) 1f else 0.30f,
             animationSpec = tween(500, easing = LinearEasing),
             label = "Size",
             finishedListener = {
-                navController.popBackStack()
-                navController.navigate(MainScreens.Home.route)
-            })
+                animationFinished = true
+            }
+        )
 
         LaunchedEffect(Unit) {
-            expanded = !expanded
+            expanded = true
         }
-        Box(
-            modifier = Modifier
-                .fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center,
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.cv_splash),
-                    modifier = Modifier
-                        .drawWithContent {
-                            clipRect(
-                                right = size.width * expansion
-                            ) {
-                                this@drawWithContent.drawContent()
-                            }
-                        },
-                    contentScale = ContentScale.Fit,
-                    contentDescription = "Adrian De Seta CV"
-                )
-                Text(
-                    text = "Adrian De Seta CV",
-                    modifier = Modifier.padding(start = 10.dp),
-                    style = MaterialTheme.typography.bodyLarge
-                )
+
+        LaunchedEffect(animationFinished) {
+            if (animationFinished) {
+                delay(1000L)
+                navController.popBackStack()
+                navController.navigate(MainScreens.Home.route)
             }
         }
 
+        // UI
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center,
+        ) {
+            Image(
+                painter = painterResource(R.drawable.cv_splash),
+                modifier = Modifier
+                    .drawWithContent {
+                        clipRect(
+                            right = size.width * expansion
+                        ) {
+                            this@drawWithContent.drawContent()
+                        }
+                    },
+                contentScale = ContentScale.Fit,
+                contentDescription = "Adrian De Seta CV"
+            )
+            Text(
+                text = "Adrian De Seta CV",
+                modifier = Modifier.padding(start = 10.dp),
+                style = MaterialTheme.typography.bodyLarge
+            )
+        }
     }
 }
-
