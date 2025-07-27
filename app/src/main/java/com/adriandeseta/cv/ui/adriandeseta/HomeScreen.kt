@@ -38,10 +38,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @Composable
-fun AdriandesetaScreen(modifier: Modifier = Modifier, viewModel: AdriandesetaViewModel = hiltViewModel()) {
+fun HomeScreen(modifier: Modifier = Modifier, viewModel: AdriandesetaViewModel = hiltViewModel()) {
     val items by viewModel.uiState.collectAsStateWithLifecycle()
     if (items is AdriandesetaUiState.Success) {
-        AdriandesetaScreen(
+        HomeScreen(
             items = (items as AdriandesetaUiState.Success).data,
             onSave = viewModel::addAdriandeseta,
             modifier = modifier
@@ -50,7 +50,7 @@ fun AdriandesetaScreen(modifier: Modifier = Modifier, viewModel: AdriandesetaVie
 }
 
 @Composable
-internal fun AdriandesetaScreen(
+internal fun HomeScreen(
     items: List<String>,
     onSave: (name: String) -> Unit,
     modifier: Modifier = Modifier
@@ -82,7 +82,7 @@ internal fun AdriandesetaScreen(
 @Composable
 private fun DefaultPreview() {
     MyApplicationTheme {
-        AdriandesetaScreen(listOf("Compose", "Room", "Kotlin"), onSave = {})
+        HomeScreen(listOf("Compose", "Room", "Kotlin"), onSave = {})
     }
 }
 
@@ -90,6 +90,6 @@ private fun DefaultPreview() {
 @Composable
 private fun PortraitPreview() {
     MyApplicationTheme {
-        AdriandesetaScreen(listOf("Compose", "Room", "Kotlin"), onSave = {})
+        HomeScreen(listOf("Compose", "Room", "Kotlin"), onSave = {})
     }
 }

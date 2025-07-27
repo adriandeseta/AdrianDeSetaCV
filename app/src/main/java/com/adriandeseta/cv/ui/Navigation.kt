@@ -23,14 +23,14 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.adriandeseta.cv.ui.adriandeseta.AdriandesetaScreen
+import com.adriandeseta.cv.ui.adriandeseta.HomeScreen
 
 @Composable
 fun MainNavigation() {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "main") {
-        composable("main") { AdriandesetaScreen(modifier = Modifier.padding(16.dp)) }
+        composable("main") { HomeScreen(modifier = Modifier.padding(16.dp)) }
         // TODO: Add more destinations
     }
 }
