@@ -2,18 +2,18 @@ package com.adriandeseta.cv.ui.adriandeseta.experience
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.compose.rememberNavController
-import com.adriandeseta.cv.ui.adriandeseta.personaldata.PersonalDataScreen
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun ExperienceItem(
@@ -23,7 +23,9 @@ fun ExperienceItem(
     role: String,
     responsibilities: List<String>,
 ) {
-    Column(modifier = modifier.padding(8.dp)) {
+    Column(
+        modifier = modifier.width(150.dp).height(200.dp).padding(8.dp)
+    ) {
         Text(
             text = period,
             style = MaterialTheme.typography.labelMedium
@@ -52,5 +54,17 @@ fun ExperienceItem(
                 modifier = Modifier.padding(start = 8.dp)
             )
         }
+    }
+}
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun PreviewExperienceItem() {
+    MaterialTheme {
+        ExperienceItem(
+            period = "2014 - 2020",
+            company = "Lagash",
+            role = "Sr. UI Developer",
+            responsibilities = listOf("Tenaris", "Claro video", "Banco Santander")
+        )
     }
 }
