@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -27,11 +28,11 @@ import androidx.navigation.compose.rememberNavController
 import com.adriandeseta.cv.R
 
 @Composable
-fun ProfileScreen(navController: NavController) {
+fun ProfileScreen(modifier: Modifier, navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.secondary)
+            .background(Color.White)
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -73,6 +74,9 @@ fun PreviewProfileScreen() {
     // Si tenés un tema custom, usalo acá:
     MaterialTheme {
         // Usamos un NavController de prueba
-        ProfileScreen(navController = rememberNavController())
+        ProfileScreen(
+            navController = rememberNavController(),
+            modifier = Modifier
+        )
     }
 }

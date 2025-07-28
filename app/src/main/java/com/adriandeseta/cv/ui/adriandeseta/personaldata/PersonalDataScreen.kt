@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextDecoration
@@ -21,10 +22,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.adriandeseta.cv.ui.adriandeseta.profile.ProfileScreen
 
 @Composable
-fun PersonalDataScreen(navController: NavController) {
+fun PersonalDataScreen(modifier: Modifier, navController: NavController) {
 
     val context = LocalContext.current
     val url = "https://www.linkedin.com/in/adrian-de-seta-755a1854"
@@ -32,7 +32,7 @@ fun PersonalDataScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.secondary)
+            .background(Color.White)
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     )  {
@@ -137,6 +137,9 @@ fun PreviewPersonalDataScreen() {
     // Si tenés un tema custom, usalo acá:
     MaterialTheme {
         // Usamos un NavController de prueba
-        PersonalDataScreen(navController = rememberNavController())
+        PersonalDataScreen(
+            navController = rememberNavController(),
+            modifier = Modifier
+        )
     }
 }

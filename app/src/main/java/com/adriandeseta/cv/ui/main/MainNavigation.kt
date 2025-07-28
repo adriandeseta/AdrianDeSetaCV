@@ -20,25 +20,6 @@ fun MainNavigation(navController: NavHostController) {
             SplashNavigation(navController = navController)
         }
 
-        composable(MainScreens.Home.route) {
-            HomeScreen(navController = navController)
-        }
-
-        composable(MainScreens.Profile.route) {
-            ProfileScreen(navController = navController)
-        }
-
-        composable(MainScreens.Skills.route) {
-            SkillsScreen(navController = navController)
-        }
-
-        composable(MainScreens.Experience.route) {
-            ExperienceScreen(navController = navController)
-        }
-
-        composable(MainScreens.PersonalData.route) {
-            PersonalDataScreen(navController = navController)
-        }
     }
 
 }

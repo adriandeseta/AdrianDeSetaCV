@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
@@ -28,6 +29,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -36,13 +38,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.adriandeseta.cv.ui.adriandeseta.HomeScreen
 import com.adriandeseta.cv.ui.adriandeseta.experience.ExperienceScreen
 import com.adriandeseta.cv.ui.adriandeseta.personaldata.PersonalDataScreen
 import com.adriandeseta.cv.ui.adriandeseta.profile.ProfileScreen
 import com.adriandeseta.cv.ui.adriandeseta.skills.SkillsScreen
+import com.adriandeseta.cv.ui.main.resources.CustomText
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CvApp() {
     val drawerState = rememberDrawerState(DrawerValue.Closed)
@@ -69,57 +72,67 @@ fun CvApp() {
             )
         }
     ) {
-        Scaffold(
-            topBar = {
-                TopAppBar(
-                    title = {
-                        Row(
-                            modifier = Modifier.fillMaxSize(),
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically
-
-                        ) {
-                            Text(
-                                text = "Adrián De Seta"
-                            )
-
-                            IconButton(
-                                onClick = { scope.launch { drawerState.open() } },
-                            ) {
-                                Icon(Icons.Default.Menu, contentDescription = "Menú")
-                            }
-                        }
-                    },
-                    navigationIcon = {})
-            }
-        ) { paddingValues ->
+        AppScaffold(
+            title = "Adrián De Seta",
+            drawerState = drawerState,
+            navController = navController
+        ) { modifier ->
             NavHost(
                 navController = navController,
-                startDestination = "perfil",
-                modifier = Modifier.padding(paddingValues)
+                startDestination = "home",
+                modifier = modifier
             ) {
-                composable("perfil") {
-                    ProfileScreen(
-                        navController = navController
-                    )
-                }
-                composable("experiencia") {
-                    ExperienceScreen(
-                        navController = navController
-                    )
-                }
-                composable("habilidades") {
-                    SkillsScreen(
-                        navController = navController
-                    )
-                }
-                composable("informacion") {
-                    PersonalDataScreen(
-                        navController = navController
-                    )
-                }
+                composable("home") { HomeScreen(modifier, navController) }
+                composable("perfil") { ProfileScreen(modifier, navController) }
+                composable("experiencia") { ExperienceScreen(modifier, navController) }
+                composable("habilidades") { SkillsScreen(modifier, navController) }
+                composable("informacion") { PersonalDataScreen(modifier, navController) }
             }
         }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun AppScaffold(
+    title: String,
+    drawerState: DrawerState,
+    navController: NavHostController,
+    content: @Composable (Modifier) -> Unit
+) {
+    val scope = rememberCoroutineScope()
+
+    Scaffold(modifier = Modifier.padding(0.dp),
+        topBar = {
+            TopAppBar(
+                title = {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        CustomText(
+                            text = title,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 20.sp,
+                        )
+                        IconButton(
+                            onClick = { scope.launch { drawerState.open() } }
+                        ) {
+                            Icon(Icons.Default.Menu, contentDescription = "Menú")
+                        }
+                    }
+                }
+            )
+        }
+    ) { paddingValues ->
+        content(
+            Modifier
+                .padding(
+                    top = paddingValues.calculateTopPadding(),
+                    bottom = paddingValues.calculateBottomPadding()
+                )
+        )
     }
 }
 
@@ -140,10 +153,12 @@ fun DrawerContent(
             "perfil" to "Perfil",
             "experiencia" to "Experiencia",
             "habilidades" to "Habilidades",
-            "informacion" to "Información personal"
+            "informacion" to "Información personal",
+            "home" to "Home"
         ).forEach { (route, label) ->
-            Text(
+            CustomText(
                 text = label,
+                fontWeight = FontWeight.Medium,
                 fontSize = 20.sp,
                 modifier = Modifier
                     .background(if (currentRoute == route) Color.LightGray else Color.Transparent)
@@ -152,10 +167,16 @@ fun DrawerContent(
                     .padding(top = 5.dp, bottom = 16.dp, start = 16.dp, end = 16.dp)
                     .height(60.dp)
             )
-            HorizontalDivider(
-                color = Color.Black,
-            )
+            HorizontalDivider(color = Color.Black)
         }
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun CvAppPreview() {
+    MaterialTheme {
+        CvApp()
     }
 }
 
