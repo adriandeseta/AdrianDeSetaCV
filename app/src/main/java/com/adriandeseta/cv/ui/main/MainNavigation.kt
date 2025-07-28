@@ -1,44 +1,22 @@
 package com.adriandeseta.cv.ui.main
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.adriandeseta.cv.ui.adriandeseta.HomeScreen
-import com.adriandeseta.cv.ui.adriandeseta.experience.ExperienceScreen
-import com.adriandeseta.cv.ui.adriandeseta.personaldata.PersonalDataScreen
-import com.adriandeseta.cv.ui.adriandeseta.profile.ProfileScreen
-import com.adriandeseta.cv.ui.adriandeseta.skills.SkillsScreen
-import com.adriandeseta.cv.ui.adriandeseta.splash.SplashNavigation
+import androidx.navigation.compose.rememberNavController
+import com.adriandeseta.cv.ui.adriandeseta.splash.SplashScreen
 
 @Composable
-fun MainNavigation(navController: NavHostController) {
+fun MainNavigation() {
 
-    NavHost(navController = navController, startDestination = MainScreens.SplashNavigation.route) {
+    val navController = rememberNavController()
 
-        composable(MainScreens.SplashNavigation.route) {
-            SplashNavigation(navController = navController)
-        }
-
-        composable(MainScreens.Home.route) {
-            HomeScreen(navController = navController)
-        }
-
-        composable(MainScreens.Profile.route) {
-            ProfileScreen(navController = navController)
-        }
-
-        composable(MainScreens.Skills.route) {
-            SkillsScreen(navController = navController)
-        }
-
-        composable(MainScreens.Experience.route) {
-            ExperienceScreen(navController = navController)
-        }
-
-        composable(MainScreens.PersonalData.route) {
-            PersonalDataScreen(navController = navController)
-        }
+    NavHost(
+        navController = navController,
+        startDestination = "splash"
+    ) {
+        composable("splash") { SplashScreen(navController) }
+        composable("main") { CvApp() }
     }
 
 }
