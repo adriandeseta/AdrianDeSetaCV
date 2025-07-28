@@ -41,7 +41,7 @@ fun ExperienceScreen(modifier: Modifier, navController: NavController) {
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Start,
             text = "Experiencia",
-            fontSize = 65.sp
+            fontSize = 62.sp
         )
         Spacer(Modifier.height(20.dp))
 

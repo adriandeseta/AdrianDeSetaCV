@@ -53,7 +53,7 @@ fun ProfileScreen(modifier: Modifier, navController: NavController) {
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Start,
             text = "Mi perfil",
-            fontSize = 70.sp
+            fontSize = 62.sp
         )
 
         HorizontalDivider(
