@@ -43,7 +43,6 @@ import androidx.navigation.compose.rememberNavController
 import com.adriandeseta.cv.R
 import com.adriandeseta.cv.ui.main.resources.BoldText
 import com.adriandeseta.cv.ui.main.resources.CustomText
-import com.adriandeseta.cv.ui.main.resources.NormalText
 import kotlinx.coroutines.launch
 
 @Composable
