@@ -65,7 +65,7 @@ fun HomeScreen(modifier: Modifier, navController: NavController) {
             painter = painterResource(R.drawable.cv_home_pic),
             contentDescription = "Adrian De Seta CV",
             modifier = Modifier
-                .width(350.dp)
+                .fillMaxWidth()
                 .height(360.dp)
                 .clip(RoundedCornerShape(10.dp))
                 .background(Color.White),
