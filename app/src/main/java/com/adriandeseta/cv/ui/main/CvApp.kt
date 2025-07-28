@@ -153,8 +153,7 @@ fun DrawerContent(
             "perfil" to "Perfil",
             "experiencia" to "Experiencia",
             "habilidades" to "Habilidades",
-            "informacion" to "Información personal",
-            "home" to "Home"
+            "informacion" to "Información personal"
         ).forEach { (route, label) ->
             CustomText(
                 text = label,

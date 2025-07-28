@@ -59,7 +59,7 @@ fun HomeScreen(modifier: Modifier, navController: NavController) {
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Start,
             text = "Resumen",
-            fontSize = 70.sp
+            fontSize = 65.sp
         )
 
         Image(

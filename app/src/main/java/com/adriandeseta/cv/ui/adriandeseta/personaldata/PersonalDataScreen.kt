@@ -1,14 +1,21 @@
 package com.adriandeseta.cv.ui.adriandeseta.personaldata
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,117 +24,52 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.adriandeseta.cv.ui.main.resources.BoldText
+import com.adriandeseta.cv.ui.main.resources.CustomText
+import com.adriandeseta.cv.ui.theme.cv_text_grey
 
 @Composable
 fun PersonalDataScreen(modifier: Modifier, navController: NavController) {
-
-    val context = LocalContext.current
-    val url = "https://www.linkedin.com/in/adrian-de-seta-755a1854"
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.White)
-            .padding(16.dp),
+            .padding(16.dp)
+            .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
-    )  {
+    ) {
 
-        Text(
-            text = "Adrián De Seta - CV",
-            style = MaterialTheme.typography.headlineMedium,
-            modifier = Modifier
-                .padding(vertical = 32.dp)
-                .align(Alignment.CenterHorizontally)
+        BoldText(
+            modifier = Modifier.fillMaxWidth(),
+            textAlign = TextAlign.Start,
+            text = "Información personal",
+            fontSize = 62.sp,
         )
-
-        Text(
-            text = "NOMBRE",
-            style = MaterialTheme.typography.titleLarge,
+        Spacer(Modifier.height(20.dp))
+        PersonalDataItem("Nombre", "Adrián De Seta")
+        PersonalDataItem("Dirección", "Sarachaga 4958 | CABA")
+        PersonalDataItem("Nacionalidad", "Argentina | Italiana")
+        PersonalDataItem("Fecha de nacimiento", "06/09/1985")
+        PersonalDataItem("Teléfono", "+54 11 67547474")
+        PersonalDataItemLink(
+            "Linkedin",
+            "Ir al perfil",
+            "https://www.linkedin.com/in/adrian-de-seta-755a1854"
         )
-        Text(
-            text = "Adrián De Seta",
-            style = MaterialTheme.typography.labelLarge,
-        )
-
-        Spacer(Modifier.height(10.dp))
-
-        Text(
-            text = "DIRECCION",
-            style = MaterialTheme.typography.titleLarge,
-        )
-        Text(
-            text = "Sarachaga 4958 | CABA",
-            style = MaterialTheme.typography.labelLarge,
-        )
-
-        Spacer(Modifier.height(10.dp))
-
-        Text(
-            text = "NACIONALIDAD",
-            style = MaterialTheme.typography.titleLarge,
-        )
-        Text(
-            text = "Argentina | Italiana",
-            style = MaterialTheme.typography.labelLarge,
-        )
-
-        Spacer(Modifier.height(10.dp))
-
-        Text(
-            text = "FECHA DE NACIMIENTO",
-            style = MaterialTheme.typography.titleLarge,
-        )
-        Text(
-            text = "06/09/1985",
-            style = MaterialTheme.typography.labelLarge,
-        )
-
-        Spacer(Modifier.height(10.dp))
-
-        Text(
-            text = "TELEFONO",
-            style = MaterialTheme.typography.titleLarge,
-        )
-        Text(
-            text = "+54 11 6754 7474",
-            style = MaterialTheme.typography.labelLarge,
-        )
-
-        Spacer(Modifier.height(10.dp))
-
-        Text(
-            text = "LINKEDIN",
-            style = MaterialTheme.typography.titleLarge,
-        )
-        Text(
-            text = AnnotatedString(url),
-            style = MaterialTheme.typography.labelLarge.copy(
-                color = MaterialTheme.colorScheme.primary,
-                textDecoration = TextDecoration.Underline
-            ),
-            modifier = Modifier
-                .padding(top = 4.dp)
-                .clickable {
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                    context.startActivity(intent)
-                }
-        )
-
-        Spacer(Modifier.height(10.dp))
-
-        Text(
-            text = "E-MAIL",
-            style = MaterialTheme.typography.titleLarge,
-        )
-        Text(
-            text = "adriandeseta1985@gmail.com",
-            style = MaterialTheme.typography.labelLarge,
-        )
+        PersonalDataItemLink("Github", "Ir al repositorio", "https://github.com/adriandeseta")
+        PersonalDataItem("Email", "adriandeseta1985@gmail.com")
     }
 }
 

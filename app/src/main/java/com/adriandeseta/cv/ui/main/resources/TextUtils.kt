@@ -4,11 +4,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import com.adriandeseta.cv.R
@@ -38,6 +40,29 @@ fun CustomText(
     fontSize: TextUnit = 16.sp,
     color: Color = Color.Black,
     fontWeight: FontWeight = FontWeight.Normal,
+    style: TextStyle = TextStyle.Default,
+    textDecoration: TextDecoration = TextDecoration.None
+) {
+    Text(
+        text = text,
+        modifier = modifier,
+        color = color,
+        fontSize = fontSize,
+        textAlign = textAlign,
+        fontFamily = figtreeFontFamily,
+        fontWeight = fontWeight,
+        style = style,
+        textDecoration = textDecoration
+    )
+}
+@Composable
+fun CustomTextLink(
+    modifier: Modifier = Modifier,
+    text: AnnotatedString,
+    textAlign: TextAlign = TextAlign.Start,
+    fontSize: TextUnit = 16.sp,
+    color: Color = Color.Black,
+    fontWeight: FontWeight = FontWeight.Normal,
     style: TextStyle = TextStyle.Default
 ) {
     Text(
@@ -51,7 +76,6 @@ fun CustomText(
         style = style
     )
 }
-
 // Versiones específicas (opcionales, para conveniencia)
 @Composable
 fun NormalText(
