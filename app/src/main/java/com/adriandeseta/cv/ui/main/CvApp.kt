@@ -131,6 +131,13 @@ fun AppScaffold(
                             text = title,
                             fontWeight = FontWeight.Bold,
                             fontSize = 20.sp,
+                            modifier = Modifier.clickable {
+                                navController.navigate("home") {
+                                    popUpTo(navController.graph.startDestinationId) { saveState = true }
+                                    launchSingleTop = true
+                                    restoreState = true
+                                }
+                            }
                         )
                         IconButton(
                             onClick = { scope.launch { drawerState.open() } }
@@ -179,6 +186,9 @@ fun DrawerContent(
                 text = stringResource(R.string.content_description),
                 fontWeight = FontWeight.Bold,
                 fontSize = 20.sp,
+                modifier = Modifier.clickable {
+                    onDestinationClicked("home")
+                }
             )
             IconButton(
                 modifier = Modifier.offset(10.dp),

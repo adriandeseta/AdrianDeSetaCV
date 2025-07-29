@@ -14,7 +14,7 @@
 
     <!-- HOME SCREEN -->
     <string name="home_title">Resumen</string>
-    <string name="home_text">Desarrollor Front end con experiencia en Kotlin para aplicaciones Android.</string>
+    <string name="home_text">Desarrollador Front-end con experiencia en Kotlin para aplicaciones Android.</string>
 
     <!-- PROFILE SCREEN -->
     <string name="profile_bio">¡Hola! 👋 Soy Adrián, desarrollador de aplicaciones móviles con enfoque en Android y experiencia sólida programando en Kotlin. A lo largo de mi carrera, me especialicé en el desarrollo de soluciones escalables utilizando arquitecturas modernas como MVVM, aplicando principios de programación orientada a objetos y desarrollando pruebas unitarias para asegurar la calidad del código. Además, poseo conocimientos en diseño UX/UI que me permiten entender las necesidades del usuario y traducirlas en interfaces intuitivas y funcionales. Cuento con un fuerte background en HTML y CSS, lo cual complementa mi perfil técnico al permitirme intervenir tanto en el diseño visual como en la implementación del front-end. Mi experiencia trabajando en equipos ágiles bajo metodologías como Scrum, junto con mi compromiso y predisposición para el trabajo colaborativo, son claves en mi día a día como desarrollador.</string>
