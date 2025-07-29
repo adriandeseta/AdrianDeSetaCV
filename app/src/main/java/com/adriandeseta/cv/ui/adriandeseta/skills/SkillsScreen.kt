@@ -19,14 +19,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.adriandeseta.cv.R
 import com.adriandeseta.cv.ui.adriandeseta.skills.dto.SkillsItemDto
 import com.adriandeseta.cv.ui.main.resources.BoldText
 
 @Composable
-fun SkillsScreen(modifier: Modifier, navController: NavController) {
+fun SkillsScreen() {
     val skills = listOf(
         SkillsItemDto(stringResource(R.string.skills_title_kotlin), 4),
         SkillsItemDto(stringResource(R.string.skills_title_jetpack), 4),
@@ -78,9 +76,6 @@ fun PreviewSkillsScreenScreen() {
     // Si tenés un tema custom, usalo acá:
     MaterialTheme {
         // Usamos un NavController de prueba
-        SkillsScreen(
-            navController = rememberNavController(),
-            modifier = Modifier
-        )
+        SkillsScreen()
     }
 }

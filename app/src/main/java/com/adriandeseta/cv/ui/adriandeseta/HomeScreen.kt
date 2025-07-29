@@ -38,7 +38,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.adriandeseta.cv.R
 import com.adriandeseta.cv.ui.main.resources.BoldText
@@ -46,7 +45,7 @@ import com.adriandeseta.cv.ui.main.resources.CustomText
 import kotlinx.coroutines.launch
 
 @Composable
-fun HomeScreen(modifier: Modifier, navController: NavController) {
+fun HomeScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -135,8 +134,7 @@ fun PreviewHomeScreen() {
                 }
             ) { paddingValues ->
                 HomeScreen(
-                    modifier = Modifier.padding(paddingValues),
-                    navController = navController
+
                 )
             }
         }

@@ -7,10 +7,14 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Menu
@@ -87,11 +91,11 @@ fun CvApp() {
                 startDestination = "home",
                 modifier = modifier
             ) {
-                composable("home") { HomeScreen(modifier, navController) }
-                composable("perfil") { ProfileScreen(modifier, navController) }
-                composable("experiencia") { ExperienceScreen(modifier, navController) }
-                composable("habilidades") { SkillsScreen(modifier, navController) }
-                composable("informacion") { PersonalDataScreen(modifier, navController) }
+                composable("home") { HomeScreen() }
+                composable("perfil") { ProfileScreen() }
+                composable("experiencia") { ExperienceScreen() }
+                composable("habilidades") { SkillsScreen() }
+                composable("informacion") { PersonalDataScreen() }
             }
         }
     }
@@ -166,7 +170,8 @@ fun DrawerContent(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 24.dp, horizontal = 16.dp),
+                .windowInsetsPadding(WindowInsets.statusBars)
+                .padding(top = 16.dp, bottom = 16.dp, start = 16.dp, end = 16.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -176,6 +181,7 @@ fun DrawerContent(
                 fontSize = 20.sp,
             )
             IconButton(
+                modifier = Modifier.offset(10.dp),
                 onClick = {
                     scope.launch {
                         drawerState.close()

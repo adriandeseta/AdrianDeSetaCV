@@ -19,13 +19,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.adriandeseta.cv.R
 import com.adriandeseta.cv.ui.main.resources.BoldText
 
 @Composable
-fun PersonalDataScreen(modifier: Modifier, navController: NavController) {
+fun PersonalDataScreen() {
 
     Column(
         modifier = Modifier
@@ -87,9 +85,6 @@ fun PreviewPersonalDataScreen() {
     // Si tenés un tema custom, usalo acá:
     MaterialTheme {
         // Usamos un NavController de prueba
-        PersonalDataScreen(
-            navController = rememberNavController(),
-            modifier = Modifier
-        )
+        PersonalDataScreen()
     }
 }

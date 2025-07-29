@@ -28,14 +28,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.adriandeseta.cv.R
 import com.adriandeseta.cv.ui.main.resources.BoldText
 import com.adriandeseta.cv.ui.main.resources.CustomText
 
 @Composable
-fun ProfileScreen(modifier: Modifier, navController: NavController) {
+fun ProfileScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -102,9 +100,6 @@ fun PreviewProfileScreen() {
     // Si tenés un tema custom, usalo acá:
     MaterialTheme {
         // Usamos un NavController de prueba
-        ProfileScreen(
-            navController = rememberNavController(),
-            modifier = Modifier
-        )
+        ProfileScreen()
     }
 }
