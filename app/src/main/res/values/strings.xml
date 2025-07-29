@@ -1,20 +1,39 @@
-<!--
-  ~ Copyright (C) 2022 The Android Open Source Project
-  ~
-  ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ you may not use this file except in compliance with the License.
-  ~ You may obtain a copy of the License at
-  ~
-  ~      http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing, software
-  ~ distributed under the License is distributed on an "AS IS" BASIS,
-  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  ~ See the License for the specific language governing permissions and
-  ~ limitations under the License.
-  -->
-
 <resources>
-    <string name="app_name">cv</string>
-    <string name="bio">¡Hola! 👋 Soy Adrián, desarrollador de aplicaciones móviles con enfoque en Android y experiencia sólida programando en Kotlin. A lo largo de mi carrera, me especialicé en el desarrollo de soluciones escalables utilizando arquitecturas modernas como MVVM, aplicando principios de programación orientada a objetos y desarrollando pruebas unitarias para asegurar la calidad del código. Además, poseo conocimientos en diseño UX/UI que me permiten entender las necesidades del usuario y traducirlas en interfaces intuitivas y funcionales. Cuento con un fuerte background en HTML y CSS, lo cual complementa mi perfil técnico al permitirme intervenir tanto en el diseño visual como en la implementación del front-end. Mi experiencia trabajando en equipos ágiles bajo metodologías como Scrum, junto con mi compromiso y predisposición para el trabajo colaborativo, son claves en mi día a día como desarrollador.</string>
+
+    <!-- APP NAME -->
+    <string name="app_name">Adrián De Seta CV</string>
+
+    <!-- CONTENT DESCRIPTION -->
+    <string name="content_description">Adrián De Seta CV</string>
+
+    <!-- PROFILE SCREEN -->
+    <string name="profile_bio">¡Hola! 👋 Soy Adrián, desarrollador de aplicaciones móviles con enfoque en Android y experiencia sólida programando en Kotlin. A lo largo de mi carrera, me especialicé en el desarrollo de soluciones escalables utilizando arquitecturas modernas como MVVM, aplicando principios de programación orientada a objetos y desarrollando pruebas unitarias para asegurar la calidad del código. Además, poseo conocimientos en diseño UX/UI que me permiten entender las necesidades del usuario y traducirlas en interfaces intuitivas y funcionales. Cuento con un fuerte background en HTML y CSS, lo cual complementa mi perfil técnico al permitirme intervenir tanto en el diseño visual como en la implementación del front-end. Mi experiencia trabajando en equipos ágiles bajo metodologías como Scrum, junto con mi compromiso y predisposición para el trabajo colaborativo, son claves en mi día a día como desarrollador.</string>
+    <string name="profile_title">Mi perfil</string>
+
+    <!-- EXPERIENCE SCREEN -->
+    <string name="experience_title">Experiencia</string>
+
+    <!-- PERSONAL DATA SCREEN -->
+    <string name="personal_data_title">Información personal</string>
+    <string name="personal_data_name_title">Nombre</string>
+    <string name="personal_data_name">Adrián De Seta</string>
+    <string name="personal_data_adress_title">Dirección</string>
+    <string name="personal_data_adress">Sarachaga 4958 | CABA</string>
+    <string name="personal_data_nationality_title">Nacionalidad</string>
+    <string name="personal_data_nationality">Argentina | Italiana</string>
+    <string name="personal_data_birthday_title">Fecha de nacimiento</string>
+    <string name="personal_data_birthday">06/09/1985</string>
+    <string name="personal_data_phone_title">Teléfono</string>
+    <string name="personal_data_phone_data">+54 9 11 6754-7474</string>
+    <string name="personal_data_phone">5491167547474</string>
+    <string name="personal_data_linkedin_title">Linkedin</string>
+    <string name="personal_data_linkedin_data">Ir al perfil</string>
+    <string name="personal_data_linkedin">https://www.linkedin.com/in/adrian-de-seta-755a1854</string>
+    <string name="personal_data_github_title">Github</string>
+    <string name="personal_data_github_data">Ir al repositorio</string>
+    <string name="personal_data_github">https://github.com/adriandeseta</string>
+    <string name="personal_data_email_title">Email</string>
+    <string name="personal_data_email_data">adriandeseta1985@gmail.com</string>
+
 </resources>
+

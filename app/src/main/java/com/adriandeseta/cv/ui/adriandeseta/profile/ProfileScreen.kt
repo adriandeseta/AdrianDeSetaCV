@@ -48,7 +48,7 @@ fun ProfileScreen(modifier: Modifier, navController: NavController) {
         BoldText(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Start,
-            text = "Mi perfil",
+            text = stringResource(R.string.profile_title),
             fontSize = 62.sp
         )
 
@@ -70,7 +70,7 @@ fun ProfileScreen(modifier: Modifier, navController: NavController) {
         CustomText(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Start,
-            text = stringResource(R.string.bio),
+            text = stringResource(R.string.profile_bio),
             fontSize = 20.sp,
             fontWeight = FontWeight.Medium
         )
@@ -84,7 +84,7 @@ fun ProfileScreen(modifier: Modifier, navController: NavController) {
             Image(
                 alignment = Alignment.CenterStart,
                 painter = painterResource(R.drawable.cv_home_pic),
-                contentDescription = "Adrian De Seta CV",
+                contentDescription = stringResource(R.string.content_description),
                 modifier = Modifier
                     .width(198.dp)
                     .height(247.dp)
