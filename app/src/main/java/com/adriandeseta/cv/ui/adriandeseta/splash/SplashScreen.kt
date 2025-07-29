@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -29,7 +30,6 @@ fun SplashScreen(navController: NavController) {
     val bgColor = remember { Animatable(Color.Black) }
     val contentAlpha = remember { Animatable(0f) }
 
-    // Derivamos el color del texto: si el fondo está más cerca del blanco → texto negro
     val textColor = if (bgColor.value.luminance() < 0.5f) Color.White else Color.Black
 
     LaunchedEffect(Unit) {
@@ -64,7 +64,6 @@ fun SplashScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier.alpha(contentAlpha.value)
         ) {
-            // 🔵 Logo dentro de un círculo
             Box(
                 modifier = Modifier
                     .size(160.dp)
@@ -82,13 +81,13 @@ fun SplashScreen(navController: NavController) {
             Spacer(modifier = Modifier.height(20.dp))
 
             CustomText(
-                text = "Adrián De Seta",
+                text = stringResource(R.string.personal_data_name),
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Medium,
                 color = textColor
             )
             CustomText(
-                text = "Mobile developer",
+                text = stringResource(R.string.splash_sub_title),
                 fontSize = 20.sp,
                 fontWeight = FontWeight.Medium,
                 color = textColor

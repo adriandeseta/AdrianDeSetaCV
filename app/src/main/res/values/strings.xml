@@ -4,7 +4,17 @@
     <string name="app_name">Adrián De Seta CV</string>
 
     <!-- CONTENT DESCRIPTION -->
-    <string name="content_description">Adrián De Seta CV</string>
+    <string name="content_description">Adrián De Seta</string>
+
+    <!-- MENU TITLES -->
+    <string name="menu_title_perfil">Perfil</string>
+    <string name="menu_title_experiencia">Experiencia</string>
+    <string name="menu_title_habilidades">Habilidades</string>
+    <string name="menu_title_informacion_personal">Información personal</string>
+
+    <!-- HOME SCREEN -->
+    <string name="home_title">Resumen</string>
+    <string name="home_text">Desarrollor Front end con experiencia en Kotlin para aplicaciones Android.</string>
 
     <!-- PROFILE SCREEN -->
     <string name="profile_bio">¡Hola! 👋 Soy Adrián, desarrollador de aplicaciones móviles con enfoque en Android y experiencia sólida programando en Kotlin. A lo largo de mi carrera, me especialicé en el desarrollo de soluciones escalables utilizando arquitecturas modernas como MVVM, aplicando principios de programación orientada a objetos y desarrollando pruebas unitarias para asegurar la calidad del código. Además, poseo conocimientos en diseño UX/UI que me permiten entender las necesidades del usuario y traducirlas en interfaces intuitivas y funcionales. Cuento con un fuerte background en HTML y CSS, lo cual complementa mi perfil técnico al permitirme intervenir tanto en el diseño visual como en la implementación del front-end. Mi experiencia trabajando en equipos ágiles bajo metodologías como Scrum, junto con mi compromiso y predisposición para el trabajo colaborativo, son claves en mi día a día como desarrollador.</string>
@@ -35,5 +45,26 @@
     <string name="personal_data_email_title">Email</string>
     <string name="personal_data_email_data">adriandeseta1985@gmail.com</string>
 
-</resources>
+    <!-- SKILLS SCREEN -->
+    <string name="skills_title">Habilidades &amp; Formación</string>
+    <string name="skills_title_kotlin">Kotlin</string>
+    <string name="skills_title_jetpack">Jetpack Compose"</string>
+    <string name="skills_title_poo">POO</string>
+    <string name="skills_title_restful">RESTful API</string>
+    <string name="skills_title_solid">Solid</string>
+    <string name="skills_title_mvvm">MVVM</string>
+    <string name="skills_title_java">Java</string>
+    <string name="skills_title_scrum">Scrum</string>
+    <string name="skills_title_html">HTML</string>
+    <string name="skills_title_css">CSS</string>
+    <string name="skills_title_git">GIT</string>
+    <string name="skills_title_javascript">JavaScript</string>
+    <string name="skills_title_boostrap">Boostrap</string>
+    <string name="skills_title_figma">Figma</string>
+    <string name="skills_title_ux">User experience</string>
+    <string name="skills_title_comunicacion">Comunicación y gestión</string>
 
+    <!-- SPLASH SCREEN -->
+    <string name="splash_sub_title">Mobile developer</string>
+
+</resources>

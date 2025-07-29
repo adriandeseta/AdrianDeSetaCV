@@ -14,34 +14,36 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.adriandeseta.cv.R
 import com.adriandeseta.cv.ui.adriandeseta.skills.dto.SkillsItemDto
 import com.adriandeseta.cv.ui.main.resources.BoldText
 
 @Composable
 fun SkillsScreen(modifier: Modifier, navController: NavController) {
     val skills = listOf(
-        SkillsItemDto("Kotlin", 4),
-        SkillsItemDto("Jetpack Compose", 4),
-        SkillsItemDto("POO", 4),
-        SkillsItemDto("RESTful API", 4),
-        SkillsItemDto("Solid", 4),
-        SkillsItemDto("MVVM", 4),
-        SkillsItemDto("Java", 3),
-        SkillsItemDto("Scrum", 4),
-        SkillsItemDto("HTML", 5),
-        SkillsItemDto("CSS", 5),
-        SkillsItemDto("GIT", 4),
-        SkillsItemDto("JavaScript", 3),
-        SkillsItemDto("Boostrap", 4),
-        SkillsItemDto("Figma", 3),
-        SkillsItemDto("User experience", 3),
-        SkillsItemDto("Comunicación y gestion", 4)
+        SkillsItemDto(stringResource(R.string.skills_title_kotlin), 4),
+        SkillsItemDto(stringResource(R.string.skills_title_jetpack), 4),
+        SkillsItemDto(stringResource(R.string.skills_title_poo), 4),
+        SkillsItemDto(stringResource(R.string.skills_title_restful), 4),
+        SkillsItemDto(stringResource(R.string.skills_title_solid), 4),
+        SkillsItemDto(stringResource(R.string.skills_title_mvvm), 4),
+        SkillsItemDto(stringResource(R.string.skills_title_java), 3),
+        SkillsItemDto(stringResource(R.string.skills_title_scrum), 4),
+        SkillsItemDto(stringResource(R.string.skills_title_html), 5),
+        SkillsItemDto(stringResource(R.string.skills_title_css), 5),
+        SkillsItemDto(stringResource(R.string.skills_title_git), 4),
+        SkillsItemDto(stringResource(R.string.skills_title_javascript), 3),
+        SkillsItemDto(stringResource(R.string.skills_title_boostrap), 4),
+        SkillsItemDto(stringResource(R.string.skills_title_figma), 3),
+        SkillsItemDto(stringResource(R.string.skills_title_ux), 3),
+        SkillsItemDto(stringResource(R.string.skills_title_comunicacion), 4)
     )
 
     Column(
@@ -55,7 +57,7 @@ fun SkillsScreen(modifier: Modifier, navController: NavController) {
         BoldText(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Start,
-            text = "Habilidades & Formación",
+            text = stringResource(R.string.skills_title),
             fontSize = 62.sp
         )
         Spacer(Modifier.height(20.dp))

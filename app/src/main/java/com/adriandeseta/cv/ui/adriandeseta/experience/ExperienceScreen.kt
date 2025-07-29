@@ -37,7 +37,6 @@ fun ExperienceScreen(modifier: Modifier, navController: NavController) {
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
         BoldText(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Start,

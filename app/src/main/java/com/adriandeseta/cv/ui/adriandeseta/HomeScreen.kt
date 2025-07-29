@@ -32,6 +32,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -56,13 +57,13 @@ fun HomeScreen(modifier: Modifier, navController: NavController) {
         BoldText(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Start,
-            text = "Resumen",
+            text = stringResource(R.string.home_title),
             fontSize = 65.sp
         )
 
         Image(
             painter = painterResource(R.drawable.cv_home_pic),
-            contentDescription = "Adrian De Seta CV",
+            contentDescription = stringResource(R.string.content_description),
             modifier = Modifier
                 .fillMaxWidth()
                 .height(360.dp)
@@ -88,7 +89,7 @@ fun HomeScreen(modifier: Modifier, navController: NavController) {
         CustomText(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Start,
-            text = "Desarrollor Front end con experiencia en Kotlin para aplicaciones Android.",
+            text = stringResource(R.string.home_text),
             fontSize = 24.sp,
             fontWeight = FontWeight.Medium
         )
