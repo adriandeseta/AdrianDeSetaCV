@@ -62,14 +62,18 @@ fun PersonalDataScreen(modifier: Modifier, navController: NavController) {
         PersonalDataItem("Dirección", "Sarachaga 4958 | CABA")
         PersonalDataItem("Nacionalidad", "Argentina | Italiana")
         PersonalDataItem("Fecha de nacimiento", "06/09/1985")
-        PersonalDataItem("Teléfono", "+54 11 67547474")
+        PersonalDataItemWithDialog(
+            title = "Teléfono",
+            data = "+54 9 11 6754-7474",
+            phoneNumber = "5491167547474"
+        )
         PersonalDataItemLink(
             "Linkedin",
             "Ir al perfil",
             "https://www.linkedin.com/in/adrian-de-seta-755a1854"
         )
         PersonalDataItemLink("Github", "Ir al repositorio", "https://github.com/adriandeseta")
-        PersonalDataItem("Email", "adriandeseta1985@gmail.com")
+        PersonalEmailItemWithDialog("Email", "adriandeseta1985@gmail.com")
     }
 }
 

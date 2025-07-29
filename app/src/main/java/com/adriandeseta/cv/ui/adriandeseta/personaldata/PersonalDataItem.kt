@@ -7,10 +7,19 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
@@ -93,3 +102,152 @@ fun PersonalDataItemLink(
         }
     }
 }
+
+@Composable
+fun PersonalDataItemWithDialog(
+    title: String,
+    data: String,
+    phoneNumber: String // en formato internacional: "5491167547474"
+) {
+    val context = LocalContext.current
+    var showDialog by remember { mutableStateOf(false) }
+
+    if (showDialog) {
+        AlertDialog(
+            onDismissRequest = { showDialog = false },
+            title = { Text("¿Qué querés hacer?") },
+            confirmButton = {},
+            text = {
+                Column {
+                    Text(
+                        "Llamar",
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:+$phoneNumber"))
+                                context.startActivity(intent)
+                                showDialog = false
+                            }
+                            .padding(8.dp)
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        "Enviar WhatsApp",
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                val url = "https://wa.me/$phoneNumber"
+                                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                                context.startActivity(intent)
+                                showDialog = false
+                            }
+                            .padding(8.dp)
+                    )
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDialog = false }) {
+                    Text("Cancelar")
+                }
+            }
+        )
+    }
+
+    // Tu item
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(66.dp)
+            .background(Color.White)
+    ) {
+        HorizontalDivider(color = Color.Black)
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            CustomText(
+                text = title,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Medium
+            )
+            CustomText(
+                text = data,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Medium,
+                modifier = Modifier.clickable { showDialog = true },
+                color = cv_text_grey,
+                textDecoration = TextDecoration.Underline
+            )
+        }
+    }
+}
+
+@Composable
+fun PersonalEmailItemWithDialog(
+    title: String,
+    email: String
+) {
+    val context = LocalContext.current
+    var showDialog by remember { mutableStateOf(false) }
+
+    if (showDialog) {
+        AlertDialog(
+            onDismissRequest = { showDialog = false },
+            title = { Text("¿Qué querés hacer?") },
+            text = {
+                Column {
+                    Text(
+                        "Enviar email",
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                val intent = Intent(Intent.ACTION_SENDTO).apply {
+                                    data = Uri.parse("mailto:$email")
+                                    putExtra(Intent.EXTRA_SUBJECT, "Consulta desde la app")
+                                }
+                                context.startActivity(intent)
+                                showDialog = false
+                            }
+                            .padding(8.dp)
+                    )
+                }
+            },
+            confirmButton = {},
+            dismissButton = {
+                TextButton(onClick = { showDialog = false }) {
+                    Text("Cancelar")
+                }
+            }
+        )
+    }
+
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(66.dp)
+            .background(Color.White)
+    ) {
+        HorizontalDivider(color = Color.Black)
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            CustomText(
+                text = title,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Medium
+            )
+            CustomText(
+                text = email,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Medium,
+                modifier = Modifier.clickable { showDialog = true },
+                color = cv_text_grey,
+                textDecoration = TextDecoration.Underline
+            )
+        }
+    }
+}
+
