@@ -46,7 +46,7 @@ fun ExperienceScreen() {
         LazyVerticalGrid(
             columns = GridCells.Fixed(1),
             modifier = Modifier.fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(10.dp),
+            verticalArrangement = Arrangement.spacedBy(20.dp),
         ) {
             items(experiences) { exp ->
                 ExperienceItem(

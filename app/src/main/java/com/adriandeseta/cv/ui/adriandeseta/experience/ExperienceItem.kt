@@ -36,34 +36,32 @@ fun ExperienceItem(
     ) {
         HorizontalDivider(color = Color.Black)
 
-        Row(
+        Column(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
         ) {
             CustomText(
                 text = company,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Medium
             )
-            CustomText(
-                text = period,
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Medium,
-                color = cv_text_grey
-            )
-
         }
 
         Spacer(Modifier.height(10.dp))
 
         Row(
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.End
+            horizontalArrangement = Arrangement.Start
         ) {
             Column {
                 CustomText(
+                    text = period,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Medium,
+                    color = cv_text_grey
+                )
+                CustomText(
                     modifier.fillMaxWidth(),
-                    textAlign = TextAlign.End,
+                    textAlign = TextAlign.Start,
                     text = role,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Medium,
@@ -74,8 +72,9 @@ fun ExperienceItem(
 
                 responsibilities.forEach { item ->
                     CustomText(
-                        modifier.fillMaxWidth().padding(start = 8.dp),
-                        textAlign = TextAlign.End,
+                        modifier
+                            .fillMaxWidth(),
+                        textAlign = TextAlign.Start,
                         text = item,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Medium,
