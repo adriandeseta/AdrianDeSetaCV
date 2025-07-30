@@ -85,7 +85,7 @@ fun ProfileScreen() {
                 contentDescription = stringResource(R.string.content_description),
                 modifier = Modifier
                     .width(198.dp)
-                    .height(247.dp)
+                    .height(220.dp)
                     .clip(RoundedCornerShape(10.dp))
                     .background(Color.White),
                 contentScale = ContentScale.FillBounds
