@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -66,10 +67,10 @@ fun HomeScreen() {
             contentDescription = stringResource(R.string.content_description),
             modifier = Modifier
                 .fillMaxWidth()
-                .height(360.dp)
-                .clip(RoundedCornerShape(10.dp))
-                .background(Color.White),
-            contentScale = ContentScale.FillBounds
+                .fillMaxWidth()
+                .aspectRatio(1f)
+                .clip(RoundedCornerShape(10.dp)),
+            contentScale = ContentScale.Crop
         )
         HorizontalDivider(
             color = Color.Black,
@@ -103,7 +104,6 @@ fun HomeScreen() {
 @Composable
 fun PreviewHomeScreen() {
     MaterialTheme {
-        val navController = rememberNavController()
         val drawerState = rememberDrawerState(DrawerValue.Closed)
         val scope = rememberCoroutineScope()
 
