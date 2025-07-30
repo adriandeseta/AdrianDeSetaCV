@@ -30,6 +30,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -59,7 +60,7 @@ fun HomeScreen() {
             text = stringResource(R.string.home_title),
             fontSize = 65.sp
         )
-
+        Spacer(Modifier.height(10.dp))
         Image(
             painter = painterResource(R.drawable.cv_home_pic),
             contentDescription = stringResource(R.string.content_description),
