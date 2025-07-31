@@ -131,7 +131,7 @@ fun AppScaffold(
                         CustomText(
                             text = title,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 20.sp,
+                            fontSize = 16.sp,
                             modifier = Modifier.clickable {
                                 navController.navigate("home") {
                                     popUpTo(navController.graph.startDestinationId) {
@@ -188,7 +188,7 @@ fun DrawerContent(
             CustomText(
                 text = stringResource(R.string.content_description),
                 fontWeight = FontWeight.Bold,
-                fontSize = 20.sp,
+                fontSize = 16.sp,
                 modifier = Modifier.clickable {
                     onDestinationClicked("home")
                 }
@@ -220,7 +220,7 @@ fun DrawerContent(
                 CustomText(
                     text = label,
                     fontWeight = FontWeight.Medium,
-                    fontSize = 20.sp,
+                    fontSize = 24.sp,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(top = 5.dp, bottom = 5.dp, start = 16.dp, end = 16.dp)

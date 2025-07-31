@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -42,15 +43,17 @@ fun PersonalDataItem(
             .height(66.dp)
             .background(Color.White)
     ) {
-        Row(
+        Column (
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
         ) {
             CustomText(
                 text = title,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Medium
             )
+
+            Spacer(Modifier.height(10.dp))
+
             CustomText(
                 text = data,
                 fontSize = 16.sp,
@@ -76,15 +79,17 @@ fun PersonalDataItemLink(
             .height(66.dp)
             .background(Color.White)
     ) {
-        Row(
+        Column (
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
         ) {
             CustomText(
                 text = title,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Medium
             )
+
+            Spacer(Modifier.height(10.dp))
+
             CustomText(
                 text = data,
                 fontSize = 16.sp,
@@ -156,15 +161,17 @@ fun PersonalDataItemWithDialog(
             .height(66.dp)
             .background(Color.White)
     ) {
-        Row(
+        Column (
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
         ) {
             CustomText(
                 text = title,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Medium
             )
+
+            Spacer(Modifier.height(10.dp))
+
             CustomText(
                 text = data,
                 fontSize = 16.sp,
@@ -222,15 +229,17 @@ fun PersonalEmailItemWithDialog(
             .height(66.dp)
             .background(Color.White)
     ) {
-        Row(
+        Column (
             modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
         ) {
             CustomText(
                 text = title,
                 fontSize = 16.sp,
                 fontWeight = FontWeight.Medium
             )
+
+            Spacer(Modifier.height(10.dp))
+
             CustomText(
                 text = email,
                 fontSize = 16.sp,

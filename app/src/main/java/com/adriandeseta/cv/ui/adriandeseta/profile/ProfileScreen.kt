@@ -50,9 +50,8 @@ fun ProfileScreen() {
             fontSize = 62.sp
         )
 
-        HorizontalDivider(
-            color = Color.Black,
-            modifier = Modifier.padding(vertical = 16.dp)
+        Spacer(
+            modifier = Modifier.height(16.dp)
         )
 
         CustomText(

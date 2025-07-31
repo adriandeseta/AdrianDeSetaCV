@@ -72,10 +72,8 @@ fun HomeScreen() {
                 .clip(RoundedCornerShape(10.dp)),
             contentScale = ContentScale.Crop
         )
-        HorizontalDivider(
-            color = Color.Black,
-            modifier = Modifier.padding(vertical = 16.dp)
-        )
+
+        Spacer(Modifier.height(16.dp))
 
         CustomText(
             modifier = Modifier.fillMaxWidth(),
