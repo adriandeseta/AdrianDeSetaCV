@@ -40,7 +40,9 @@ fun PersonalDataScreen() {
             text = stringResource(R.string.personal_data_title),
             fontSize = 62.sp,
         )
-        Spacer(Modifier.height(20.dp))
+
+        Spacer(Modifier.height(40.dp))
+
         PersonalDataItem(
             stringResource(R.string.personal_data_name_title),
             stringResource(R.string.personal_data_name)

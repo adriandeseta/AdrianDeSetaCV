@@ -111,7 +111,8 @@ fun AppScaffold(
 ) {
     val scope = rememberCoroutineScope()
 
-    Scaffold(modifier = Modifier.padding(0.dp),
+    Scaffold(
+        modifier = Modifier.padding(0.dp),
         topBar = {
             TopAppBar(
                 colors = TopAppBarColors(
@@ -133,7 +134,9 @@ fun AppScaffold(
                             fontSize = 20.sp,
                             modifier = Modifier.clickable {
                                 navController.navigate("home") {
-                                    popUpTo(navController.graph.startDestinationId) { saveState = true }
+                                    popUpTo(navController.graph.startDestinationId) {
+                                        saveState = true
+                                    }
                                     launchSingleTop = true
                                     restoreState = true
                                 }
@@ -208,17 +211,22 @@ fun DrawerContent(
             "habilidades" to stringResource(R.string.menu_title_habilidades),
             "informacion" to stringResource(R.string.menu_title_informacion_personal)
         ).forEach { (route, label) ->
-            CustomText(
-                text = label,
-                fontWeight = FontWeight.Medium,
-                fontSize = 20.sp,
+            Row(
                 modifier = Modifier
-                    .background(if (currentRoute == route) Color.LightGray else Color.Transparent)
-                    .fillMaxWidth()
-                    .clickable { onDestinationClicked(route) }
-                    .padding(top = 5.dp, bottom = 5.dp, start = 16.dp, end = 16.dp)
                     .height(60.dp)
-            )
+                    .clickable { onDestinationClicked(route) },
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                CustomText(
+                    text = label,
+                    fontWeight = FontWeight.Medium,
+                    fontSize = 20.sp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 5.dp, bottom = 5.dp, start = 16.dp, end = 16.dp)
+                )
+            }
+
         }
     }
 }
