@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -23,10 +22,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.adriandeseta.cv.R
 import com.adriandeseta.cv.ui.main.resources.CustomText
 import com.adriandeseta.cv.ui.theme.cv_text_grey
 
@@ -41,8 +42,6 @@ fun PersonalDataItem(
             .height(66.dp)
             .background(Color.White)
     ) {
-        HorizontalDivider(color = Color.Black)
-
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
@@ -77,8 +76,6 @@ fun PersonalDataItemLink(
             .height(66.dp)
             .background(Color.White)
     ) {
-        HorizontalDivider(color = Color.Black)
-
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
@@ -107,7 +104,7 @@ fun PersonalDataItemLink(
 fun PersonalDataItemWithDialog(
     title: String,
     data: String,
-    phoneNumber: String // en formato internacional: "5491167547474"
+    phoneNumber: String
 ) {
     val context = LocalContext.current
     var showDialog by remember { mutableStateOf(false) }
@@ -115,12 +112,12 @@ fun PersonalDataItemWithDialog(
     if (showDialog) {
         AlertDialog(
             onDismissRequest = { showDialog = false },
-            title = { Text("¿Qué querés hacer?") },
+            title = { Text(stringResource(R.string.personal_data_dialog_title)) },
             confirmButton = {},
             text = {
                 Column {
                     Text(
-                        "Llamar",
+                        stringResource(R.string.personal_data_dialog_call_action),
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
@@ -132,7 +129,7 @@ fun PersonalDataItemWithDialog(
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Text(
-                        "Enviar WhatsApp",
+                        stringResource(R.string.personal_data_dialog_title_wa),
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
@@ -147,21 +144,18 @@ fun PersonalDataItemWithDialog(
             },
             dismissButton = {
                 TextButton(onClick = { showDialog = false }) {
-                    Text("Cancelar")
+                    Text(stringResource(R.string.personal_data_dialog_btn_cancel))
                 }
             }
         )
     }
 
-    // Tu item
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .height(66.dp)
             .background(Color.White)
     ) {
-        HorizontalDivider(color = Color.Black)
-
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
@@ -194,11 +188,11 @@ fun PersonalEmailItemWithDialog(
     if (showDialog) {
         AlertDialog(
             onDismissRequest = { showDialog = false },
-            title = { Text("¿Qué querés hacer?") },
+            title = { Text(stringResource(R.string.personal_data_dialog_title)) },
             text = {
                 Column {
                     Text(
-                        "Enviar email",
+                        stringResource(R.string.personal_data_dialog_title_email),
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
@@ -216,7 +210,7 @@ fun PersonalEmailItemWithDialog(
             confirmButton = {},
             dismissButton = {
                 TextButton(onClick = { showDialog = false }) {
-                    Text("Cancelar")
+                    Text(stringResource(R.string.personal_data_dialog_btn_cancel))
                 }
             }
         )
@@ -228,8 +222,6 @@ fun PersonalEmailItemWithDialog(
             .height(66.dp)
             .background(Color.White)
     ) {
-        HorizontalDivider(color = Color.Black)
-
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween

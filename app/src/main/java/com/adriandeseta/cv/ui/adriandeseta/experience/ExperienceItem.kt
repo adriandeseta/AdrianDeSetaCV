@@ -34,7 +34,6 @@ fun ExperienceItem(
             .fillMaxWidth()
             .background(Color.White)
     ) {
-        HorizontalDivider(color = Color.Black)
 
         Column(
             modifier = Modifier.fillMaxWidth(),
@@ -67,8 +66,6 @@ fun ExperienceItem(
                     fontWeight = FontWeight.Medium,
                     color = cv_text_grey
                 )
-
-                Spacer(modifier = Modifier.height(4.dp))
 
                 responsibilities.forEach { item ->
                     CustomText(

@@ -73,7 +73,7 @@ fun ProfileScreen() {
             fontWeight = FontWeight.Medium
         )
 
-        Spacer(Modifier.height(10.dp))
+        Spacer(Modifier.height(20.dp))
 
         Box(
             modifier = Modifier.fillMaxWidth(),
@@ -97,9 +97,7 @@ fun ProfileScreen() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun PreviewProfileScreen() {
-    // Si tenés un tema custom, usalo acá:
     MaterialTheme {
-        // Usamos un NavController de prueba
         ProfileScreen()
     }
 }

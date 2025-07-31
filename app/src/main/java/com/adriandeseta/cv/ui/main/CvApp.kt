@@ -216,10 +216,9 @@ fun DrawerContent(
                     .background(if (currentRoute == route) Color.LightGray else Color.Transparent)
                     .fillMaxWidth()
                     .clickable { onDestinationClicked(route) }
-                    .padding(top = 5.dp, bottom = 16.dp, start = 16.dp, end = 16.dp)
+                    .padding(top = 5.dp, bottom = 5.dp, start = 16.dp, end = 16.dp)
                     .height(60.dp)
             )
-            HorizontalDivider(color = Color.Black)
         }
     }
 }

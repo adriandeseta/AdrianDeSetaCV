@@ -82,9 +82,7 @@ fun PersonalDataScreen() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun PreviewPersonalDataScreen() {
-    // Si tenés un tema custom, usalo acá:
     MaterialTheme {
-        // Usamos un NavController de prueba
         PersonalDataScreen()
     }
 }

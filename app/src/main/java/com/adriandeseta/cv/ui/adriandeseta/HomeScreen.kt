@@ -110,8 +110,7 @@ fun PreviewHomeScreen() {
         ModalNavigationDrawer(
             drawerState = drawerState,
             drawerContent = {
-                // Puedes usar tu DrawerContent real o un placeholder
-                Text("Menú de navegación", modifier = Modifier.padding(16.dp))
+                Text("Adrián De Seta", modifier = Modifier.padding(16.dp))
             }
         ) {
             Scaffold(
